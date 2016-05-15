@@ -7,11 +7,9 @@ Install [docker](https://www.docker.com).
 
 Follow the steps to get [faf-db](https://github.com/FAForever/db) setup, the following assumes the root password ist `banana`.
 
-To fully use MediaWiki, you will need a database as well. First follow the instructions at either the [MySQL](https://registry.hub.docker.com/_/mysql/) or [MariaDB](https://registry.hub.docker.com/_/mariadb) Docker hub pages. If you already have a MediaWiki database, you can use the existing server instead.
-
 The at a glance command is
 
-	docker run --name mediawiki-mysql -e MYSQL_ROOT_PASSWORD=mysecretpassword -d mysql
+	docker run --name faf-wiki -e MYSQL_ROOT_PASSWORD=banana -d mysql
 
 ## Running the installer
 

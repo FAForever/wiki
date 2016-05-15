@@ -1,12 +1,11 @@
-# What is Mediawiki?
+# FAForever Wiki Container
 
-![MediaWiki](https://raw.githubusercontent.com/stephenliang/mediawiki-dockerfile/master/logo.png)
+This repository contains the setup for that faf wiki.
 
-MediaWiki is a free and open-source wiki application, used to power wiki websites such as Wikipedia, Wiktionary and Wikimedia Commons; it was developed by the Wikimedia Foundation and others. It also runs thousands of other websites.
 
-# How to use this image
+Install [docker](https://www.docker.com).
 
-## Start MySQL or MariaDB
+Follow the steps to get [faf-db](https://github.com/FAForever/db) setup, the following assumes the root password ist `banana`.
 
 To fully use MediaWiki, you will need a database as well. First follow the instructions at either the [MySQL](https://registry.hub.docker.com/_/mysql/) or [MariaDB](https://registry.hub.docker.com/_/mariadb) Docker hub pages. If you already have a MediaWiki database, you can use the existing server instead.
 

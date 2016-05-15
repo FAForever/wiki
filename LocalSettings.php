@@ -131,3 +131,5 @@ wfLoadSkin( 'Vector' );
 # End of automatically generated settings.
 # Add more configuration options below.
 
+require_once "$IP/extensions/mediawiki-extensions-Scribunto-master/Scribunto.php";
+$wgScribuntoDefaultEngine = 'luastandalone';

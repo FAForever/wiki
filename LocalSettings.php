@@ -15,6 +15,8 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	exit;
 }
 
+$wgUsePathInfo = false;
+
 function env($name, $default) {
     $value = getenv($name);
     if(!$value) {
@@ -36,10 +38,11 @@ $wgMetaNamespace = "FA_Forever_Wiki";
 ## (like /w/index.php/Page_title to /wiki/Page_title) please see:
 ## https://www.mediawiki.org/wiki/Manual:Short_URL
 $wgScriptPath = "";
-
+$wgScriptExtension = ".php";
 ## The protocol and server name to use in fully-qualified URLs
 $wgServer = env("FAF_WIKI_URL", "http://localhost:8080");
-
+## The relative URL path to the skins directory
+$wgStylePath = "$wgScriptPath/skins";
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
@@ -53,8 +56,8 @@ $wgLogo = "$wgResourceBasePath/resources/assets/wiki.png";
 $wgEnableEmail = true;
 $wgEnableUserEmail = true; # UPO
 
-$wgEmergencyContact = "apache@localhost";
-$wgPasswordSender = "apache@localhost";
+$wgEmergencyContact = "support@faforever.com"; 
+$wgPasswordSender = "support@faforever.com";
 
 $wgEnotifUserTalk = false; # UPO
 $wgEnotifWatchlist = false; # UPO
@@ -82,7 +85,7 @@ $wgMemCachedServers = array();
 
 ## To enable image uploads, make sure the 'images' directory
 ## is writable, then set this to true:
-$wgEnableUploads = false;
+$wgEnableUploads = true;
 #$wgUseImageMagick = true;
 #$wgImageMagickConvertCommand = "/usr/bin/convert";
 
@@ -92,7 +95,7 @@ $wgUseInstantCommons = false;
 ## If you use ImageMagick (or any other shell command) on a
 ## Linux server, this will need to be set to the name of an
 ## available UTF-8 locale
-$wgShellLocale = "C.UTF-8";
+$wgShellLocale = "en_US.utf8";
 
 ## If you want to use image uploads under safe mode,
 ## create the directories images/archive, images/thumb and
@@ -140,5 +143,47 @@ wfLoadSkin( 'Vector' );
 # End of automatically generated settings.
 # Add more configuration options below.
 
+# --- Custom used Extensions ---
+
 require_once "$IP/extensions/mediawiki-extensions-Scribunto-master/Scribunto.php";
 $wgScribuntoDefaultEngine = 'luastandalone';
+
+# --- Start of old LocalSettings.php --- 
+
+# Query string length limit for ResourceLoader. You should only set this if your web server has a query string length limit 
+# (then set it to that limit), or if you have suhosin.get.max_value_length set in php.ini (then set it to that value)
+$wgResourceLoaderMaxQueryLength = -1;
+# The following permissions were set based on your choice in the installer
+$wgGroupPermissions['*']['edit'] = false;
+$wgShowIPinHeader = false;
+# Enabled Extensions. Most extensions are enabled by including the base extension file here but check specific extension 
+# documentation for more details The following extensions were automatically enabled:
+
+$wgEnableEmail = true;
+$wgEmailConfirmToEdit = true;
+$wgEmailAuthentication = true;
+
+$wgSMTP = array(
+ 'host' => 'smtp.mandrillapp.com',
+ 'IDHost' => 'faforever.com',
+ 'localhost' => 'www.faforever.com',
+ 'port' => 587,
+ 'auth' => true,
+ 'plain' => true,
+ 'username' => '',
+ 'password' => ''
+);
+
+
+$wgLogo = "$wgScriptPath/images/icon.png";
+$wgCaptchaClass = 'QuestyCaptcha';
+$wgCaptchaQuestions[] = array( 'question' => "Type Alliance without the first and last letter in the box to the right.", 'answer' => "llianc" );
+
+require_once "$IP/skins/Vector/Vector.php";
+require_once "$IP/skins/dvector/Darkvector.php";
+
+require_once("$IP/extensions/Nuke/Nuke.php");
+
+$wgPFEnableStringFunctions = true;
+
+# --- End of old LocalSettings.php --- 

@@ -164,14 +164,14 @@ $wgEmailConfirmToEdit = true;
 $wgEmailAuthentication = true;
 
 $wgSMTP = array(
- 'host' => 'smtp.mandrillapp.com',
+ 'host' => env("FAF_SMTP_SERVER", "smtp.server.com"),
  'IDHost' => 'faforever.com',
  'localhost' => 'www.faforever.com',
- 'port' => 587,
+ 'port' => env("FAF_SMTP_PORT", "587"),
  'auth' => true,
  'plain' => true,
- 'username' => '',
- 'password' => ''
+ 'username' => env("FAF_SMTP_USERNAME", ""),
+ 'password' => env("FAF_SMTP_PASSWORD", "")
 );
 
 

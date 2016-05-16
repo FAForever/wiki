@@ -16,19 +16,28 @@ $wgUsePathInfo = false;
 
 ## Uncomment this to disable output compression
 # $wgDisableOutputCompression = true;
-$wgSitename = "FA Forever Wiki"; $wgMetaNamespace = "FA_Forever_Wiki";
+$wgSitename = "FA Forever Wiki";
+$wgMetaNamespace = "FA_Forever_Wiki";
 ## The URL base path to the directory containing the wiki; defaults for all runtime URL paths are based off of this. For 
 ## more information on customizing the URLs please see: http://www.mediawiki.org/wiki/Manual:Short_URL
-$wgScriptPath = ""; $wgScriptExtension = ".php";
+$wgScriptPath = "";
+$wgScriptExtension = ".php";
 ## The protocol and server name to use in fully-qualified URLs
 $wgServer = "http://wiki.faforever.com";
 ## The relative URL path to the skins directory
 $wgStylePath = "$wgScriptPath/skins";
 ## UPO means: this is also a user preference option
-$wgEnableEmail = true; $wgEnableUserEmail = true; # UPO $wgEmergencyContact = "support@faforever.com"; 
-$wgPasswordSender = "support@faforever.com"; #$wgEnotifUserTalk = false; # UPO $wgEnotifWatchlist = false; # UPO $wgEmailAuthentication = true;
+$wgEnableEmail = true;
+$wgEnableUserEmail = true; # UPO
+$wgEmergencyContact = "support@faforever.com"; 
+$wgPasswordSender = "support@faforever.com";
+#$wgEnotifUserTalk = false; # UPO $wgEnotifWatchlist = false; # UPO $wgEmailAuthentication = true;
 ## Database settings
-$wgDBtype = "mysql"; $wgDBserver = "172.17.0.4"; $wgDBname = "faf_wiki"; $wgDBuser = "faf_wiki"; $wgDBpassword = "";
+$wgDBtype = "mysql"; 
+$wgDBserver = "172.17.0.4"; 
+$wgDBname = "faf_wiki"; 
+$wgDBuser = "faf_wiki"; 
+$wgDBpassword = "";
 # MySQL specific settings
 $wgDBprefix = "";
 # MySQL table options to use during installation or update
@@ -36,7 +45,8 @@ $wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
 # Experimental charset support for MySQL 4.1/5.0.
 $wgDBmysql5 = false;
 ## Shared memory settings
-$wgMainCacheType = CACHE_NONE; $wgMemCachedServers = array();
+$wgMainCacheType = CACHE_NONE; 
+$wgMemCachedServers = array();
 ## To enable image uploads, make sure the 'images' directory is writable, then set this to true:
 $wgEnableUploads = true;
 #$wgUseImageMagick = true; $wgImageMagickConvertCommand = "/usr/bin/convert";
@@ -52,7 +62,8 @@ $wgShellLocale = "en_US.utf8";
 ## should not be publically accessible from the web.
 #$wgCacheDirectory = "$IP/cache";
 # Site language code, should be one of the list in ./languages/Names.php
-$wgLanguageCode = "en"; $wgSecretKey = "c8f6b8d71484b02d24b740ba2d306c9081344a2bd4546c1462c0b5c9c57eb8d0";
+$wgLanguageCode = "en"; 
+$wgSecretKey = "c8f6b8d71484b02d24b740ba2d306c9081344a2bd4546c1462c0b5c9c57eb8d0";
 # Site upgrade key. Must be set to a string (default provided) to turn on the web installer while LocalSettings.php is in 
 # place
 $wgUpgradeKey = "a9453044b4331832";
@@ -62,7 +73,8 @@ $wgDefaultSkin = "vector";
 ## For attaching licensing metadata to pages, and displaying an appropriate copyright notice / icon. GNU Free Documentation 
 ## License and Creative Commons licenses are supported so far.
 $wgRightsPage = ""; # Set to the title of a wiki page that describes your license/copyright $wgRightsUrl = ""; 
-$wgRightsText = ""; $wgRightsIcon = "";
+$wgRightsText = ""; 
+$wgRightsIcon = "";
 # $wgRightsCode = ""; # Not yet used Path to the GNU diff3 utility. Used for conflict resolution.
 $wgDiff3 = "/usr/bin/diff3";
 # Query string length limit for ResourceLoader. You should only set this if your web server has a query string length limit 

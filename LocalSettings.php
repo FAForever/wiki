@@ -65,8 +65,8 @@ $wgEmailAuthentication = true;
 
 ## Database settings
 $wgDBtype = "mysql";
-$wgDBserver = env("FAF_DB_WIKI_ADDR", "db")
-$wgDBname = env("FAF_DB_WIKI_NAME", "wiki")
+$wgDBserver = env("FAF_DB_WIKI_ADDR", "db");
+$wgDBname = env("FAF_DB_WIKI_NAME", "wiki");
 $wgDBuser = env("FAF_DB_WIKI_LOGIN", "root");
 $wgDBpassword = env("FAF_DB_WIKI_PASSWORD", "banana");
 

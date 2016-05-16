@@ -15,6 +15,15 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	exit;
 }
 
+function env($name, $default) {
+    $value = getenv($name);
+    if(!$value) {
+        $value = $default;
+    }
+    return $value;
+}
+
+
 ## Uncomment this to disable output compression
 # $wgDisableOutputCompression = true;
 
@@ -56,7 +65,7 @@ $wgDBtype = "mysql";
 $wgDBserver = "db";
 $wgDBname = "wiki";
 $wgDBuser = "root";
-$wgDBpassword = "banana";
+$wgDBpassword = env("FAF_DB_WIKI_PASSWORD", "test");
 
 # MySQL specific settings
 $wgDBprefix = "";

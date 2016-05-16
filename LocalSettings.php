@@ -38,7 +38,7 @@ $wgMetaNamespace = "FA_Forever_Wiki";
 $wgScriptPath = "";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "http://localhost:8080";
+$wgServer = env("FAF_WIKI_URL", "http://localhost:8080");
 
 
 ## The URL path to static resources (images, scripts, etc.)
@@ -62,10 +62,10 @@ $wgEmailAuthentication = true;
 
 ## Database settings
 $wgDBtype = "mysql";
-$wgDBserver = "db";
-$wgDBname = "wiki";
-$wgDBuser = "root";
-$wgDBpassword = env("FAF_DB_WIKI_PASSWORD", "test");
+$wgDBserver = env("FAF_DB_WIKI_ADDR", "db")
+$wgDBname = env("FAF_DB_WIKI_NAME", "wiki")
+$wgDBuser = env("FAF_DB_WIKI_LOGIN", "root");
+$wgDBpassword = env("FAF_DB_WIKI_PASSWORD", "banana");
 
 # MySQL specific settings
 $wgDBprefix = "";
@@ -108,11 +108,11 @@ $wgShellLocale = "C.UTF-8";
 # Site language code, should be one of the list in ./languages/Names.php
 $wgLanguageCode = "en";
 
-$wgSecretKey = "179d35005182c9cac77ccbd8741ed41fdcf18a3818b9b0b3e2e1bc1ef4a73c17";
+$wgSecretKey = env("FAF_WIKI_SECRET", "179d35005182c9cac77ccbd8741ed41fdcf18a3818b9b0b3e2e1bc1ef4a73c17");
 
 # Site upgrade key. Must be set to a string (default provided) to turn on the
 # web installer while LocalSettings.php is in place
-$wgUpgradeKey = "402b437945a7e172";
+$wgUpgradeKey = env("FAF_WIKI_UPGRADE_SECRET", "402b437945a7e172");
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation

@@ -30,3 +30,4 @@ echo "Forwared environment variables to php5-fpm"
 
 # Now restart php-fpm
 service php5-fpm restart
+bash /bin/start.sh

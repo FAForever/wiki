@@ -179,11 +179,4 @@ $wgLogo = "$wgScriptPath/images/icon.png";
 $wgCaptchaClass = 'QuestyCaptcha';
 $wgCaptchaQuestions[] = array( 'question' => "Type Alliance without the first and last letter in the box to the right.", 'answer' => "llianc" );
 
-require_once "$IP/skins/Vector/Vector.php";
-require_once "$IP/skins/dvector/Darkvector.php";
-
-require_once("$IP/extensions/Nuke/Nuke.php");
-
-$wgPFEnableStringFunctions = true;
-
 # --- End of old LocalSettings.php --- 

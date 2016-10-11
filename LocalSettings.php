@@ -179,4 +179,11 @@ $wgLogo = "$wgScriptPath/images/icon.png";
 $wgCaptchaClass = 'QuestyCaptcha';
 $wgCaptchaQuestions[] = array( 'question' => "Type Alliance without the first and last letter in the box to the right.", 'answer' => "llianc" );
 
+
+# NGINX Friendly URLS
+$wgScriptPath	    = "";
+$wgArticlePath      = "/$1";
+$wgUsePathInfo      = true;
+$wgScriptExtension  = ".php";
+
 # --- End of old LocalSettings.php --- 

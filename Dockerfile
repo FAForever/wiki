@@ -7,9 +7,12 @@ ADD LocalSettings.php /usr/share/nginx/html/LocalSettings.php
 ADD ForwardEnvVariablesToPhpFpm.sh ForwardEnvVariablesToPhpFpm.sh
 CMD bash ForwardEnvVariablesToPhpFpm.sh
 
+ADD nginx/nginx.conf /etc/nginx/nginx.conf
+ADD nginx/site.conf /etc/nginx/sites-enabled/default
+
 # Install Extensions
 ADD https://github.com/wikimedia/mediawiki-extensions-Scribunto/archive/master.tar.gz /Scribunto.tar.gz
-RUN tar -xvzf /Scribunto.tar.gz -C /usr/share/nginx/html/extensions 
+RUN tar -xvzf /Scribunto.tar.gz -C /usr/share/nginx/html/extensions
 RUN rm /Scribunto.tar.gz
 RUN chmod a+x /usr/share/nginx/html/extensions/mediawiki-extensions-Scribunto-master/engines/LuaStandalone/binaries/lua5_1_5_linux_64_generic/lua
 # Set type to httpd_sys_script_exec_t if SELinux is enforced
